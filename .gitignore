@@ -1,0 +1,21 @@
+# compiled
+*.class
+/bin/
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# eclipse
+.classpath
+.project
+.idea/
+.settings
+
+# other
+.DS_Store
+*.zip
