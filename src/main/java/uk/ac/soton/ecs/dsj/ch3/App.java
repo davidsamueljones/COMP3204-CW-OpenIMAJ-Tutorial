@@ -6,9 +6,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import javax.swing.JFrame;
 import org.apache.commons.lang3.ArrayUtils;
-import org.openimaj.image.DisplayUtilities;
 import org.openimaj.image.Image;
 import org.openimaj.image.ImageUtilities;
 import org.openimaj.image.MBFImage;
@@ -62,24 +60,6 @@ public class App {
       images.put(String.valueOf(i) + "B", workingImage);
     }
     System.out.println("Processing finished!");
-
-    // Create the named window to update with generated images
-    JFrame window = DisplayUtilities.createNamedWindow(TEST_WINDOW_ID, "Slideshow Window", true);
-    window.setVisible(true);
-
-    // Refresh the window with the next image in the slideshow every second
-    while (true) {
-      for (Map.Entry<String, Image<?, ?>> entry : images.entrySet()) {
-        DisplayUtilities.updateNamed(TEST_WINDOW_ID, entry.getValue(), entry.getKey());
-        try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          // Interrupted, safely exit
-          return;
-        }
-      }
-    }
-
   }
 
   /**
@@ -106,6 +86,7 @@ public class App {
     // Create an assigner and classify each pixel to a centroid
     final HardAssigner<float[], ?, ?> assigner = result.defaultHardAssigner();
     image.processInplace(new PixelProcessor<Float[]>() {
+      @Override
       public Float[] processPixel(Float[] pixel) {
         // A primitive float array is expected by assigner so we must convert it
         float[] primPixel = ArrayUtils.toPrimitive(pixel);

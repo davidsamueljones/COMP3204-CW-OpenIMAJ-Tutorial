@@ -1,35 +1,15 @@
 package uk.ac.soton.ecs.dsj.ch4;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import javax.swing.JFrame;
-import org.apache.commons.lang3.ArrayUtils;
 import org.openimaj.feature.DoubleFVComparison;
 import org.openimaj.image.DisplayUtilities;
-import org.openimaj.image.Image;
 import org.openimaj.image.ImageUtilities;
-import org.openimaj.image.MBFImage;
 import org.openimaj.image.pixel.statistics.HistogramModel;
-import org.openimaj.image.processing.edges.CannyEdgeDetector;
 import org.openimaj.math.statistics.distribution.MultidimensionalHistogram;
-import org.openimaj.video.Video;
-import org.openimaj.video.VideoDisplay;
-import org.openimaj.video.VideoDisplayListener;
-import org.openimaj.video.VideoDisplayStateListener;
-import org.openimaj.video.VideoPositionListener;
-import org.openimaj.video.VideoDisplay.Mode;
-import org.openimaj.video.capture.VideoCapture;
-import org.openimaj.video.xuggle.XuggleVideo;
 
 /**
  * Test application for OpenIMAJ-Tutorial Chapter 4 exercises.
@@ -37,7 +17,6 @@ import org.openimaj.video.xuggle.XuggleVideo;
  * @author David Jones (dsj1n15@ecs.soton.ac.uk)
  */
 public class App {
-  private static final String TEST_WINDOW_ID = "TEST_WINDOW";
 
   public static void main(String[] args) {
     // Generate the input URLs
